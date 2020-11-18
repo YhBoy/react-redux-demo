@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="telephone=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<script>
+(function(){
+	var html = document.documentElement;
+	var hWidth = html.getBoundingClientRect().width;
+	html.style.fontSize = hWidth/50 + "px";
+})();
+</script>
+
+<script src="/statics/wap/js/jquery.min.js"></script>
+<script src="/statics/wap/js/TouchSlide.1.1.js"></script>
+<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+<script src="js/swiper.animate.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="/statics/wap/js/js.js"></script>
+<link rel="stylesheet" type="text/css" href="/statics/wap/css/css.css"/>
+<style type="text/css">
+	.swiper-container{
+		width: 100%;
+	}
+	
+	.swiper-slide{
+		width: 12rem;
+	}
+	.swiper-slide img{
+		width: 100%;
+	}
+	.swiper-slide span{
+		display: block;
+		text-align: center;
+		color: #262626;
+	}
+</style>
+</head>
+<body style="background-color: #f1f1f5;">
+<div class="main">
+{template "wap","header"}
+	<header>
+		<div class="top">
+			<img class="logo" src="/statics/wap/images/logo.png" >
+			<img class="nav" src="/statics/wap/images/nav.png" >
+		</div>
+		
+	</header>
+	<main>
+		<div >
+			<div><img src="/statics/wap/images/item31.jpg" style="width: 100%;" ></div>
+			<div class="system">
+				<img src="/statics/wap/images/item33.png" style="width: 30%;display: block;margin: 0 auto;" >
+				<div class="systemList">
+					<ul>
+					  {pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page" moreinfo="1"}
+                    {loop $data $r}
+						<li>
+						
+							<img src="{$r[thumb]}" alt="">
+							<div>
+								  {$r[instruc]}
+								<p class="freeListenBtn" style="margin-top: 3rem;">
+									免费试听 <img src="/statics/wap/images/erji.png" >
+								</p>
+							</div>
+						</li>
+						 {/loop}
+                    {/pc}
+					</ul>
+				</div>
+			</div>
+			<div class="online">
+				<p class="subTitle">线上课程</p>
+				<p class="subLine"></p>
+				<div class="aboutDesc_slider">
+						<div class="swiper-container">
+						    <div class="swiper-wrapper">
+								  <div class="swiper-slide">
+									  <li><a href="#"><img _src="./images/item32.jpg" src="./images/item32.jpg" /><span>房产启蒙课 <br/> 谭育林</span></a></li>
+									  
+								  </div>
+								  <div class="swiper-slide">
+									  <li><a href="#"><img _src="./images/item33.jpg" src="./images/item33.jpg" /><span>房产实战课 <br/> 谭育林</span></a></li>
+									  
+								  </div>
+								  <div class="swiper-slide">
+									  <li><a href="#"><img _src="./images/item34.jpg" src="./images/item34.jpg" /><span>家庭购房方案 <br/> 谭育林</span></a></li>
+									  
+								  </div>
+								  <div class="swiper-slide">
+									  <li><a href="#"><img _src="./images/item35.jpg" src="./images/item35.jpg" /><span>房产金融课 <br/> 谭育林</span></a></li>
+								  </div>
+						     
+						    </div>
+						    <!-- Add Pagination -->
+						    <div class="swiper-pagination"></div>
+						</div>
+				</div>
+			</div>
+			<div class="noLine">
+				<p class="subTitle">线下课程</p>
+				<p class="subLine"></p>
+				<div class="aboutDesc_slider">
+					<div class="swiper-container1">
+					    <div class="swiper-wrapper">
+							  <div class="swiper-slide">
+								  <li><a href="#"><img _src="./images/item32.jpg" src="./images/item32.jpg" /><span>房产启蒙课 <br/> 谭育林</span></a></li>
+								  
+							  </div>
+							  <div class="swiper-slide">
+								  <li><a href="#"><img _src="./images/item33.jpg" src="./images/item33.jpg" /><span>房产实战课 <br/> 谭育林</span></a></li>
+								  
+							  </div>
+							  <div class="swiper-slide">
+								  <li><a href="#"><img _src="./images/item34.jpg" src="./images/item34.jpg" /><span>家庭购房方案 <br/> 谭育林</span></a></li>
+								  
+							  </div>
+							  <div class="swiper-slide">
+								  <li><a href="#"><img _src="./images/item35.jpg" src="./images/item35.jpg" /><span>房产金融课 <br/> 谭育林</span></a></li>
+							  </div>
+					     
+					    </div>
+					    <!-- Add Pagination -->
+					    <div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			 var swiper = new Swiper('.swiper-container', {
+			      slidesPerView: 3,
+			      spaceBetween: 20,
+				  loop: true,
+				  autoplay:true,
+				  paginationShow:false,
+			      
+			    });
+				
+			var swiper = new Swiper('.swiper-container1', {
+			     slidesPerView: 3,
+			     spaceBetween: 20,
+				 paginationShow:false,
+				 loop: true,
+				 autoplay:true,
+			     
+			   });	
+		</script>
+		<div>
+			<img style="width: 100%;" src="/statics/wap/images/bottomBanner.jpg" >
+		</div>
+	</main>
+{template "wap","footer"}
+</div>
+</body>
+
+
